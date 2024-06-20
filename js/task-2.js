@@ -25,15 +25,12 @@ const images = [
   }
 ];
 const list = document.querySelector(".gallery")
-list.insertAdjacentHTML("afterbegin", "<li><img src=https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260 alt=White and Black Long Fur Cat></li><li><img src=https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg alt=Alpine Spring Meadows></li><li><img src=https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg alt=Nature Landscape></li>");
-const listElement=document.querySelectorAll(".gallery>li>img");
-const listLi = document.querySelectorAll(".gallery>li");
 list.style.display="flex";
 list.style.gap="24px"
 list.style.listStyle="none"
-listElement.forEach(element => {
-  element.style.width="300px";
-  element.style.height="200px";  
-});
+for (let i = 0; i < 3; i++) {
+  const adding=`<li><img src="${images[i].url}" alt="${images[i].alt}" width="300px", height="200px"></li>`;
+  list.insertAdjacentHTML("afterbegin", adding); 
+}
 
 

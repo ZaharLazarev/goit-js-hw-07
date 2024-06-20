@@ -9,11 +9,10 @@ const refs={
   body:document.querySelector("body")
 }
 
-refs.body.addEventListener("click", handler);
+refs.btn.addEventListener("click", handler);
 function handler(){
   getRandomHexColor();
-  refs.body.style.backgroundColor=getRandomHexColor();
-  refs.color.textContent=getRandomHexColor();
+  refs.body.style.backgroundColor=refs.color.textContent=getRandomHexColor();
 }
 
 

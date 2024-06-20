@@ -5,13 +5,16 @@ const refs={
   btn:document.querySelector('button[type="submit"]'),
   inp:document.querySelectorAll("input")
 }
+function reset(){
+  refs.form.reset();
+}
 refs.form.addEventListener("submit", handler);
 function handler(event){
   const result={};
   event.preventDefault();
   refs.inp.forEach(element => {
     const key=element.getAttribute("name");
-    const value=element.value;
+    const value=element.value.trim();
     result[key]=value;
 })
 if(refs.email.value===""||refs.password.value===""){
@@ -19,10 +22,8 @@ if(refs.email.value===""||refs.password.value===""){
 }
 else{
 console.log(result);
+reset();
   };
-  reset();
 }
-function reset(){
-  refs.form.reset();
-}
+
 
