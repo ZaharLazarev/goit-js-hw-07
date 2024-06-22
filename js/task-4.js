@@ -12,15 +12,15 @@ refs.form.addEventListener("submit", handler);
 function handler(event){
   const result={};
   event.preventDefault();
+if(refs.email.value===""||refs.password.value===""){
+  alert("All form fields must be filled in");
+}
+else{
   refs.inp.forEach(element => {
     const key=element.getAttribute("name");
     const value=element.value.trim();
     result[key]=value;
 })
-if(refs.email.value===""||refs.password.value===""){
-  console.log("All form fields must be filled in");
-}
-else{
 console.log(result);
 reset();
   };

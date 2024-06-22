@@ -14,7 +14,7 @@ function createBoxes(amount) {
   refs.boxes.innerHTML = ""; 
   size = 30;
   const fragment = document.createDocumentFragment(); 
-  for (let i = 0; 1 < i < 100; i++) {
+  for (let i = 0; i < amount; i++) {
     const div = document.createElement("div");
     div.classList.add("box");
     div.style.width = `${size}px`;
